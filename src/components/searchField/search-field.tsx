@@ -15,7 +15,7 @@ const SearchField: React.FC<SearchFieldProps> = ({
       <Input
         placeholder='Номенклатура'
         type='text'
-        className='text-xl py-4'
+        className='py-4'
         value={searchValues.productName}
         onChange={(e) =>
           setSearchValues({ ...searchValues, productName: e.target.value })
