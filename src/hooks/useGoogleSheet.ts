@@ -36,9 +36,9 @@ function csvToObjects(csv: string) {
 export interface Data {
   Номенклатура: string;
   "Код товара": string;
-  "Единица измерения": string;
-  "Место хранения": string;
-  "Документ оприходования.Вх номер": string;
-  "Документ оприходования.Номер": string;
+  "Ед.изм": string;
   Количество: string;
+  "Место хранения": string;
+  Инвойс: string;
+  Номер: string;
 }

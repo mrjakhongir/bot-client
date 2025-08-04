@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DataTable from "./components/dataTable/data-table";
+import { AccordionData } from "./components/dataTable/data-accordion";
 import SearchField from "./components/searchField/search-field";
 export interface SearchFieldI {
   productName: string;
@@ -17,7 +17,8 @@ function App() {
         searchValues={searchValues}
         setSearchValues={setSearchValues}
       />
-      <DataTable searchValues={searchValues} />
+      {/* <DataTable searchValues={searchValues} /> */}
+      <AccordionData searchValues={searchValues} />
     </div>
   );
 }
