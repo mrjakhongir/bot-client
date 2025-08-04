@@ -28,7 +28,7 @@ const SelectWarehouse: React.FC<SearchFieldProps> = ({
       <SelectTrigger className='w-full'>
         <SelectValue placeholder='Место хранения' />
       </SelectTrigger>
-      <SelectContent className='max-h-[80dvh]'>
+      <SelectContent className='max-h-[60dvh]'>
         <SelectGroup>
           <SelectLabel>Навес</SelectLabel>
           <SelectItem value='Навес 1'>Навес 1</SelectItem>
