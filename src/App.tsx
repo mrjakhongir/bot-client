@@ -4,12 +4,14 @@ import SearchField from "./components/searchField/search-field";
 export interface SearchFieldI {
   productName: string;
   productCode: string;
+  productPlace: string;
 }
 
 function App() {
   const [searchValues, setSearchValues] = useState({
     productName: "",
     productCode: "",
+    productPlace: "",
   });
   return (
     <div className='max-w-[400px] mx-auto px-3'>

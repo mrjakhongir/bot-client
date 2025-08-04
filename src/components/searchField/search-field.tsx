@@ -1,5 +1,6 @@
 import type { SearchFieldI } from "@/App";
 import { Input } from "../ui/input";
+import SelectWarehouse from "./select-warehouse";
 
 type SearchFieldProps = {
   searchValues: SearchFieldI;
@@ -12,6 +13,7 @@ const SearchField: React.FC<SearchFieldProps> = ({
 }) => {
   return (
     <header className='p-2 flex flex-col gap-2 shadow-md mb-3 rounded-b-md sticky top-0 bg-white z-10'>
+      <SelectWarehouse searchValues={searchValues} setSearchValues={setSearchValues} />
       <Input
         placeholder='Номенклатура'
         type='text'

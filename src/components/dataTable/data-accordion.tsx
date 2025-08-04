@@ -21,7 +21,14 @@ export const AccordionData: React.FC<AccordionDataProps> = ({
   if (isError) return <p>{error?.message ?? "Something went wrong"}</p>;
   const filteredData = data
     ?.flat()
-    .filter((item) => item["Код товара"].includes(searchValues.productCode))
+    .filter((item) =>
+      searchValues.productPlace !== ""
+        ? item["Место хранения"] === searchValues.productPlace.trim()
+        : item
+    )
+    .filter((item) =>
+      item["Код товара"].includes(searchValues.productCode.trim())
+    )
     .filter((item) =>
       item["Номенклатура"]
         .toLowerCase()
@@ -30,7 +37,7 @@ export const AccordionData: React.FC<AccordionDataProps> = ({
   return (
     <Accordion type='single' collapsible className='w-full'>
       {filteredData?.map((item, index) => (
-        <AccordionItem value={String(index)}>
+        <AccordionItem value={String(index)} key={index}>
           <AccordionTrigger>{item["Номенклатура"]}</AccordionTrigger>
           <AccordionContent className='flex flex-col gap-4'>
             <ul className='bg-slate-50 p-2 rounded-md'>
