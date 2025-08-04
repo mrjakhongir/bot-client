@@ -22,14 +22,18 @@ export const AccordionData: React.FC<AccordionDataProps> = ({
   const filteredData = data
     ?.flat()
     .filter((item) => item["Код товара"].includes(searchValues.productCode))
-    .filter((item) => item["Номенклатура"].includes(searchValues.productName));
+    .filter((item) =>
+      item["Номенклатура"]
+        .toLowerCase()
+        .includes(searchValues.productName.toLowerCase())
+    );
   return (
     <Accordion type='single' collapsible className='w-full'>
       {filteredData?.map((item, index) => (
         <AccordionItem value={String(index)}>
           <AccordionTrigger>{item["Номенклатура"]}</AccordionTrigger>
           <AccordionContent className='flex flex-col gap-4'>
-            <ul className="bg-slate-50 p-2 rounded-md">
+            <ul className='bg-slate-50 p-2 rounded-md'>
               <li className='flex justify-between'>
                 <b>Код товара:</b>
                 {item["Код товара"]}
